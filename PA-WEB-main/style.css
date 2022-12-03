@@ -1,0 +1,1315 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --Atas-color: linear-gradient(rgba(30, 34, 51, 0.7),rgba(30, 34, 51, 0.7)), url(assets/bg.jpg);
+    --Bawah-color: url(assets/bg2.jpg);
+    --h1produk-color: rgb(8, 8, 53);
+    --h1produk-shadow: 1px 1px 3px red;
+    --pproduk-color: rgb(85, 81, 81);
+    --kolom-color: #dafaf8;
+    --kolom-shadow: rgb(108, 108, 108);
+    --kolom-hover: rgb(55, 82, 255);
+    --h1review-color: rgb(8, 8, 53);
+    --kolomreview-color: #e9f9f7;
+    --preview-color: black;
+    --fareview-color: rgb(6, 15, 114);
+    --form-color: rgba(255, 255, 255, 0.3);
+    --tampil-color: linear-gradient(rgba(17,100,98,1) 0%, rgba(15,13,106,1) 100%);
+    --form-shadow: 0px 0px 5px white;
+}
+.dark-mode {
+    --Atas-color: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.8468429608171394) 0%, rgba(0,0,0,0.4602883389683998)), url(assets/bg.jpg);
+    --Bawah-color: black;
+    --h1produk-color: red;
+    --h1produk-shadow: 1px 1px 3px white;
+    --pproduk-color: rgb(207, 206, 206);
+    --kolom-color: #810606;
+    --kolom-shadow: white;
+    --kolom-hover: rgb(255, 128, 217);
+    --h1review-color: rgb(197, 8, 8);
+    --kolomreview-color: #810606;
+    --preview-color: white;
+    --fareview-color: rgb(12, 30, 232);
+    --form-color: rgba(0, 0, 0, 0.3);
+    --tampil-color: linear-gradient( rgba(7,78,76,0.807349966353729) 0%, rgba(8,6,78,0.8269578094909839) 100%);
+    --form-shadow: 0px 0px 5px black;
+}
+
+body {
+    letter-spacing: 0.75px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.check-box{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"]{ 
+    display: none;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked ~ .check:before{
+    transform: translateX(20px);
+}
+
+input[type="checkbox"]:checked ~ .check:before{
+    background-color: #fff;
+    box-shadow: 0 0 0 50000px #000;
+}
+
+.check:before,
+.check:after {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 2px;
+    transition: transform 0.5s ease;
+    height: 16px;
+    width: 16px;
+}
+
+.check:before {
+    background-color: #000;
+    left: 2px;
+}
+
+.check {
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.5s ease-in;
+    box-shadow: 0.5s ease-in;
+    width: 40px;
+}
+
+/* navbar */
+.atas {
+    min-height: 650px;
+    height: auto;
+    width: 100%;
+    background-image: var(--Atas-color);
+    background-position: center;
+    background-size: cover;
+    position: static;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    margin: auto;
+    z-index: 1;
+    padding-bottom: 30px;
+}
+
+nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    padding-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    color: rgb(248, 240, 227);
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar {
+    float: right;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    position: static;
+    border:1px solid transparent;
+}
+
+.navbar ul li a {
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}
+
+.navbar ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    display: flex;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+    background: rgb(182, 7, 7);
+}
+
+.dark {
+    width: 30px;
+    cursor: pointer;
+}
+
+/* deskripsi */
+.deskripsi {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.deskripsi h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.deskripsi p {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+/* search box */
+.search_barang {
+    width: 90%;
+    /* width: 100%; */
+    margin: auto;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: none; */
+}
+
+.crud .search_barang .btn-kelola{
+    margin-left: 0;
+}
+
+.search_barang .btn-kelola button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.search_barang .btn-kelola button:hover {
+    border: 1px solid rgb(255, 186, 186);
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+}
+
+.search {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid transparent;
+}
+
+.search .searching {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    font-weight: bold;
+    background-color: #f86909;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: none;
+    border: 1px solid transparent;
+    width: 25%;
+    padding: 12px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.anu_search {
+    font-size: 16px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding: 12px;
+    padding-left: 14px;
+    background-color: #f86909;
+    border: 1px solid transparent;
+    /* border: 1px solid yellow; */
+    outline: none;
+    width: 100%;
+}
+
+.search input::-webkit-input-placeholder {
+    color: rgb(220, 220, 220);
+}
+
+.searching:hover {
+    background-color: rgb(30, 175, 175);
+    box-shadow: 1px 1px 5px 1px #00F5FF;
+    outline: 0px solid #00F5FF;
+}
+
+/* produk */
+#product .best-seller {
+    color: #101010;
+}
+
+.container {
+    padding-top: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.container h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--h1produk-color);
+    text-shadow: var(--h1produk-shadow);
+}
+
+.container p {
+    text-align: center;
+    color: var(--pproduk-color);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 350;
+    padding: 10px;
+}
+
+.box-produk {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+.produk {
+    width: 15%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.5s;
+}
+
+.produk:hover {
+    border: 2px solid rgba(250, 2, 46, 0.75);
+}
+
+.produk img {
+    margin: 10px 0;
+    width: 90%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.produk img:hover {
+    transform: scale(1.025);
+}
+
+.produk .deskripsi-produk {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px 0;
+    background: rgba(255, 255, 255, 0.25);
+    padding-bottom: 18px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 162px;
+}
+
+.produk .deskripsi-produk a {
+    text-decoration: none;
+}
+
+.produk .deskripsi-produk h4 {
+    color: #252525;
+    font-size: 24px;
+    padding: 0 10px;
+}
+
+.produk .deskripsi-produk .judul {
+    color: #252525;
+    font-size: 24px;
+    padding: 0 10px;
+}
+
+.produk .deskripsi-produk .harga {
+    font-size: 20px;
+    color: #252525;
+    font-weight: 900;
+    letter-spacing: 0.75px;
+    margin-bottom: 10px;
+}
+
+.produk .deskripsi-produk .btn-produk {
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: var(--h1produk-color);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: #eeeeee;
+    background: #212529;
+} 
+
+.produk .deskripsi-produk .btn-produk:hover {
+    color: #fa022e;
+    background: #d3ece9;
+    border: 1px solid #fa022e;
+}
+
+/* review */
+.review {
+    width: 90%;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.review h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--h1review-color);
+}
+
+.baris {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.baris2Review {
+    margin: auto;
+    width: 47%;
+}
+
+.kolomReview {
+    flex-basis: 43%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align:  left;
+    background: var(--kolomreview-color);
+    box-shadow: 0px 0px 3px 0px rgb(108, 108, 108);
+    padding: 25px;
+    display: flex;
+}
+
+.kolomReview img {
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.kolomReview p {
+    color: var(--pproduk-color);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 350;
+}
+
+.review h2 {
+    color: var(--preview-color);
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
+.review .fa {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(255, 221, 0);
+}
+
+/* footer */
+footer {
+    padding-top: 50px;
+    text-align: center;
+}
+
+footer p {
+    color: var(--preview-color);
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: #101010;
+}
+
+#ig {
+    text-decoration: none;
+    color: var(--preview-color);
+}
+
+footer .fa {
+    color: var(--fareview-color);
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#kontak {
+    margin: auto;
+    width: 60%;
+    border-radius: 10px;
+}
+
+/* about me */
+.about {
+    margin-top: 40px;
+    display: flex;
+    width: 80%;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.about h1 {
+    margin-top: 20px;
+    font-size: 60px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+.kolomAbout p {
+    text-align: left;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+.kolomAbout img {   
+    margin-left: 60px; 
+    margin-top: 30px;
+    width: 38%;
+}
+
+.bawah {
+    padding-top: 70px;
+    background: var(--Bawah-color);
+    background: var(--Bawah-color);
+    background-size: cover;
+    width: 100%;
+}
+
+/* form order */
+.form {
+    text-shadow: var(--form-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--form-color);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
+    max-width: 550px;
+    max-height: 700px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    color: var(--preview-color);
+    font-weight: 600;
+}
+
+.form h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.input {
+    font-family: 'Ubuntu';
+    display: flex;
+    justify-content: space-between;
+    width: 480px;
+    margin: 20px;
+}
+
+.input input{
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160);
+    box-shadow: 0px 0px 5px 0px rgb(160, 160, 160);
+    height: 30px;
+    outline: none;
+    width: 300px;
+    padding-left: 10px;
+}
+
+textarea{
+    font-size: 16px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160);
+    box-shadow: 0px 0px 5px 0px rgb(160, 160, 160);
+    height: 150px;
+    resize: none;
+    outline: none;
+    width: 300px;
+}
+
+.input #phone:focus,
+.input #phone:valid {
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+    border-color: rgb(198, 72, 37);
+}
+
+textarea:focus,
+textarea:valid {
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+    border-color: rgb(198, 72, 37);
+}
+
+.input input:focus,
+.input input:valid{
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+    border-color: rgb(198, 72, 37);
+}
+
+.input select {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid rgb(160, 160, 160);
+    box-shadow: 0px 0px 5px 0px rgb(160, 160, 160);
+    border-radius: 5px; 
+    height: 29px;
+    width: 312px;
+    padding-left: 10px;
+}
+
+.input select:focus,
+.input select:valid{
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+    border-color: rgb(198, 72, 37);
+}
+
+.metodePembayaran {
+    text-align: left;
+    padding-left: 18px;
+}
+
+.method {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.form label {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    box-shadow: 0px 0px 5px 0px rgb(255, 172, 254);
+    border-color: rgb(198, 72, 37);
+    height: 10px;
+    width: 10px;
+    background: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+#dot1:checked ~ .method label .one,
+#dot2:checked ~ .method label .two,
+#dot3:checked ~ .method label .three{
+    border-color: white;
+    background: rgb(255, 172, 254);
+}
+
+.form input[type="radio"]{
+    display: none;
+}
+
+.submitButton input{
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-left: 13px;
+    color: white;
+    height: 35px;
+    width: 95%;
+    font-weight: 700;
+    font-family: 'ubuntu';
+    font-size: 25px;
+    background: linear-gradient(90deg, rgba(142,81,28,1) 0%, rgba(147,2,2,1) 100%);
+}
+
+.submitButton input:hover{
+    border: 1px solid rgb(255, 162, 162);
+    box-shadow: 0 0 4px 0 rgb(255, 129, 129);
+}
+
+.crud h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 0 0 4px #E5EBB2;
+}
+
+table{
+    background: white;
+    border-radius: 5px;
+    margin: auto;
+    width: 90%;
+    margin-top: 15px;
+}
+
+table tr:nth-child(odd){
+    background: rgb(197, 196, 196);
+}   
+
+table td, th{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+table th{
+    background: #00ABB3;
+    position: sticky;
+}
+
+.crud .btn-kelola {
+    margin-left: 67px;
+    margin: 0;
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.crud button{
+    width: 120px;
+    border-radius: 5px;
+    background: #fb4a22;
+    border: none;
+    outline: none;
+    border: 1px solid transparent;
+    margin: 0;
+    margin-right: 15px;
+    padding: 10px 0 ;
+}
+
+
+.crud button a{
+    font-size: 16px;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+
+table a{
+    text-decoration: none;
+    color: black;
+}
+
+.crud button:hover{
+    box-shadow: 1px 1px 5px 1px #00F5FF;
+    outline: 1px solid #00F5FF;
+}
+
+.material-icons{
+    transition: 0.3s all linear;
+}
+.material-icons:hover{
+    transform: scale(1.1);
+}
+
+.kelola h1 {
+    margin-top: 50px;
+    color: white;
+    text-shadow: 0 0 4px #E5EBB2;
+}
+
+.kelola-detail{
+    display: flex;
+    margin: auto;
+    margin-top: 100px;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
+
+.kelola button{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 120px;
+    padding-top: 10px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    background: #fb4a22;
+    float: left;
+    border: none;
+    outline: none;
+}
+
+.kelola-detail button {
+    width: 300px;
+    padding: 20px 0;
+}
+
+.kelola button a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #eeeeee;
+}
+
+.kelola-detail button a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.kelola button:hover{
+    box-shadow: 1px 1px 5px 1px #00F5FF;
+    outline: 1px solid #00F5FF;
+}
+
+#gmbr_tbl{
+    width: 100px;
+}
+
+/* media query*/
+@media screen and (max-width: 1200px){
+    .produk {
+        margin: 10px;
+        width: 20%;
+    }
+    .boxPesanan .pesanan{
+        width: 30%;
+    }
+    .boxPesanan img{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .boxPesanan .pesanan{
+        width: 40%;
+    }
+    .boxPesanan img{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 915px){
+    .navbar ul li{
+        padding: 10px 10px;
+    }
+    .produk {
+        margin: 20px;
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 745px){
+    body{
+        width: 100%;
+    }
+    .bawah{
+        padding-top: 10px;
+    }
+    .atas{
+        min-height: 500px;
+    }
+    #logo {
+        margin: 5px;
+        font-size: 26px;
+    }
+    nav{
+        padding: 15px;
+    }
+    .navbar ul li{
+        display: inline-flex;
+        flex-direction: row;
+        padding: 8px 8px;
+        top: 0;
+    }
+    .navbar ul li a{
+        font-size: 13px;
+    }
+    .deskripsi h1 {
+        font-size: 32px;
+    }
+    .deskripsi p {
+        font-size: 12px;
+    }
+    .search{
+        height: 30px;
+    }
+    .search input {
+        font-size: 9px;
+    }
+    .search .searching{
+        font-size: 12px;
+        padding: 10px;
+    }
+    .crud .anu_search{
+        width: 150px;
+    }
+    .crud table{
+        margin-top: 10px;
+    }
+    .produk {
+        margin: 20px;
+        width: 30%;
+    }
+    .deskripsi-produk .judul{
+        font-size: 10px;
+    }
+    .kolomReview{
+        padding: 5px;
+    }
+    .kolomReview img{
+        margin: 10px;
+    }
+    .review h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .review p {
+        padding: 5px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .review i {
+        font-size: 12px;
+    }
+    .review h2 {
+        font-size: 12px;
+    }
+    footer{
+        padding-top: 0;
+        margin-top: 0;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    #kontak{
+        width: 70%;
+    }
+    footer .fa {
+        font-size: 16px;
+    }
+    .crud h1{
+        font-size: 22px;
+        margin: 30px;
+    }
+    .crud table{
+        font-size: 7px;
+    }
+    .crud table tr{
+        height: 8px;
+    }
+    .crud button{
+        width: 15%;
+        padding: 5px;
+    }
+    .crud .btn-kelola{
+        justify-content: space-between;
+    }
+    .crud .btn-kelola button{
+        width: 100px;
+    }
+    .crud .btn-kelola-admin{
+        margin-bottom: 5px;
+        margin-left: 33px;
+    }
+    .crud button a{
+        font-size: 12px;
+    }
+    table{
+        margin-top: 70px;
+    }
+    input[type="checkbox"]:checked ~ .check:before{
+        transform: translateX(10px);
+    }
+    .check:before,
+    .check:after {
+        height: 12px;
+        top: 0;
+        width: 12px;
+    }
+    .check:before {
+        left: 0;
+    }
+    .check {
+        height: 12px;
+        width: 24px;
+    }
+    .form {
+        padding-top: 0;
+        margin-top: 20px;
+        width: 40%;
+        min-height: 370px;
+    }
+    .form .input{
+        width: 95%;
+    }
+    .form textarea{
+        width: 140%;
+        height: 100px;
+        font-size: 12px;
+    }
+    .form button{
+        width: 20%;
+        margin-left: 6px;
+        padding: 4px;
+    }
+    .form .detail{
+        text-align: left;
+    }
+    .kelola button a{
+        font-size: 12px;
+    }
+    #gmbr_tbl{
+        width: 50%;
+    }
+    .img-container img{
+        width: 150px;
+    }
+    .about h1 {
+        font-size: 35px;
+    }
+    .about p {
+        font-size: 9px;
+    }
+    .about img {
+        width: 50%;
+    }
+    .form h2 {
+        padding-top: 10px;
+        font-size: 20px;
+    }
+    .order-detail {
+        font-size: 9px;
+        width: 250px;
+    }
+    .detail {
+        padding-top: 5px;
+        width: 150px;
+    }
+    .input {
+        width: 250px;
+        margin: 10px;
+    }
+    .input input {
+        font-size: 9px;
+        height: 20px;
+        width: 330px;
+    }
+    .submitButton input{
+        font-size: 20px;
+        height: 25px;
+    } 
+    .container .produk-div-right{
+        margin: 0;
+    }
+    .boxPesanan .pesanan{
+        width: 60%;
+    }
+    .boxPesanan img{
+        width: 45%;
+    }
+    .messages .box-container .box{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+    }
+    .contact .row{
+        flex-direction: column;
+    }
+    .contact .row form {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #logo{
+        margin: 2px;
+        font-size: 20px;
+    }
+    .navbar ul li{
+        padding: 4px 4px;    
+    }
+    .navbar ul li a{
+        font-size: 10px;
+    }
+    .produk {
+        margin: 10px;
+        width: 40%;
+    }
+    .messages .box-container .box{
+        width: 60%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    body{
+        width: 100%;
+    }
+    #logo {
+        margin: 5px;
+        font-size: 14px;
+    }
+    .atas{
+        min-height: 400px;
+        padding-bottom: 20px;
+    }
+    .bawah{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .bawah .container{
+        padding-top: 0;
+    }
+    nav{
+        padding: 5px;
+    }
+    .navbar ul li{
+        padding: 2px 2px;
+        top: 0;
+    }
+    .navbar ul li a{
+        margin: 2px;
+        font-size: 8px;
+    }
+    .deskripsi h1 {
+        font-size: 22px;
+    }
+    .deskripsi p {
+        font-size: 10px;
+    }
+    .search{
+        height: 20px;
+        width: 65%;
+    }
+    .container h1{
+        font-size: 26px;
+        margin: 0;
+    }
+    .container p{
+        font-size: 10px;
+    }
+    .produk {
+        margin: 20px;
+        width: 50%;
+    }
+    .deskripsi-produk .judul{
+        font-size: 10px;
+    }
+    .kolomReview{
+        padding: 0px;
+    }
+    .kolomReview img{
+        margin: 5px;
+        width: 25px;
+        height: 25px;
+    }
+    .review h1 {
+        font-size: 16px;
+    }
+    .review .baris{
+        margin-top: 10px;
+    }
+    .review p {
+        font-size: 9px;
+        text-align: left;
+    }
+    .review i {
+        font-size: 5px;
+    }
+    .review .fa{
+        margin: 2px;
+        padding: 0;
+    }
+    .review h2 {
+        font-size: 9px;
+        margin: 3px;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    #kontak{
+        width: 80%;
+    }
+    .review{
+        margin-bottom: 40px;
+    }
+    footer{
+        padding-top: 0;
+    }
+    footer .fa {
+        font-size: 9px;
+    }
+    .crud h1{
+        font-size: 22px;
+    }
+    .crud table{
+        font-size: 7px;
+    }
+    .crud table tr{
+        height: 8px;
+    }
+    .crud button{
+        width: 15%;
+        padding: 5px;
+    }
+    .crud .btn-kelola{
+        justify-content: space-between;
+    }
+    .crud .btn-kelola-admin{
+        margin-bottom: 5px;
+        margin-left: 33px;
+    }
+    .crud button a{
+        font-size: 12px;
+    }
+    table{
+        margin-top: 70px;
+    }
+    input[type="checkbox"]:checked ~ .check:before{
+        transform: translateX(6px);
+    }
+    .check:before,
+    .check:after {
+        height: 8px;
+        top: 0;
+        width: 8px;
+    }
+    .check:before {
+        left: 0;
+    }
+    .check {
+        height: 8px;
+        width: 16px;
+    }
+    .form {
+        position: absolute;
+        top: 15%;
+        left: 12%;
+        width: 60%;
+        min-height: 250px;
+    }
+    .form .input{
+        width: 95%;
+    }
+    .form .input select{
+        font-size: 9px;
+    }
+    .form textarea{
+        width: 140%;
+        height: 100px;
+        font-size: 12px;
+    }
+    .form button{
+        width: 20%;
+        margin-left: 6px;
+        padding: 4px;
+    }
+    .form .detail{
+        text-align: left;
+    }
+    .kelola button a{
+        font-size: 12px;
+    }
+    #gmbr_tbl{
+        width: 50%;
+    }
+    .about h1 {
+        font-size: 35px;
+    }
+    .about p {
+        font-size: 9px;
+    }
+    .about img {
+        width: 50%;
+    }
+    .form h2 {
+        font-size: 24px;
+    }
+    .order-detail {
+        font-size: 9px;
+        width: 250px;
+    }
+    .detail {
+        padding-top: 5px;
+        width: 150px;
+    }
+    .input {
+        width: 250px;
+        margin: 10px;
+    }
+    .input input {
+        font-size: 9px;
+        height: 20px;
+        width: 330px;
+    }
+    .submitButton input{
+        font-size: 20px;
+        height: 25px;
+    } 
+    .messages .box-container .box{
+        width: 50%;
+        height: 70%;
+    }
+}
